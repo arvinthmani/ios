@@ -28,9 +28,9 @@ class MealTableViewController: UITableViewController {
   
   // MARK: Private Methods
   private func loadMealInCell() {
-    let meal1 = Meal(name: "Idili")
-    let meal2 = Meal(name: "Dosa")
-    let meal3 = Meal(name: "Rice")
+    let meal1 = Meal(name: "Idili", rating: "1")
+    let meal2 = Meal(name: "Dosa", rating: "2")
+    let meal3 = Meal(name: "Rice", rating: "3")
     
     meals += [meal1,meal2, meal3]
   }
@@ -56,6 +56,7 @@ class MealTableViewController: UITableViewController {
       }
 
       cell.mealNameLabel.text = meals[indexPath.row].name
+      cell.mealRating.text = meals[indexPath.row].rating
         return cell
     }
   
@@ -110,6 +111,4 @@ class MealTableViewController: UITableViewController {
         mealDetailVC.mealName = meals[(self.tableView.indexPathForSelectedRow)!.row]
       }
     }
- 
-
 }

@@ -8,11 +8,7 @@
 
 import Foundation
 
-class Meal {
-  
+struct  Meal {
   var name: String
-  
-  init(name: String) {
-    self.name = name
-  }
+  var rating: String?
 }

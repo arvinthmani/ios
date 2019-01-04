@@ -11,6 +11,7 @@ import UIKit
 class MealTableViewCell: UITableViewCell {
   
   @IBOutlet weak var mealNameLabel: UILabel!
+  @IBOutlet weak var mealRating: UILabel!
   
     override func awakeFromNib() {
         super.awakeFromNib()

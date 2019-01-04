@@ -11,12 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
   @IBOutlet weak var mealLabel: UILabel!
+  @IBOutlet weak var mealRatingLabel: UILabel!
   var mealName: Meal!
   
 
   override func viewDidLoad() {
     super.viewDidLoad()
     mealLabel.text = mealName.name
+    mealRatingLabel.text = mealName.rating
     // Do any additional setup after loading the view, typically from a nib.
   }
 

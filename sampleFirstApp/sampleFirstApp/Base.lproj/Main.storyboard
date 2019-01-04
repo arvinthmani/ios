@@ -32,16 +32,27 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FY8-AG-gaT">
+                                            <rect key="frame" x="34" y="22" width="341" height="45.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="FY8-AG-gaT" firstAttribute="centerY" secondItem="76x-Hf-87P" secondAttribute="centerY" id="ANo-dp-Vy9"/>
                                         <constraint firstItem="9DV-Cj-tMs" firstAttribute="top" secondItem="76x-Hf-87P" secondAttribute="topMargin" id="Hbn-v5-rYB"/>
+                                        <constraint firstAttribute="trailing" secondItem="FY8-AG-gaT" secondAttribute="trailing" id="OJH-Yl-D7R"/>
+                                        <constraint firstItem="FY8-AG-gaT" firstAttribute="top" secondItem="76x-Hf-87P" secondAttribute="topMargin" constant="11" id="TWK-TH-2yv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="9DV-Cj-tMs" secondAttribute="bottom" constant="47" id="h9l-pD-H5w"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9DV-Cj-tMs" secondAttribute="trailing" constant="20" symbolic="YES" id="kZs-re-G2D"/>
+                                        <constraint firstItem="FY8-AG-gaT" firstAttribute="leading" secondItem="76x-Hf-87P" secondAttribute="leading" constant="34" id="mg1-7P-4Js"/>
                                         <constraint firstItem="9DV-Cj-tMs" firstAttribute="leading" secondItem="76x-Hf-87P" secondAttribute="leadingMargin" constant="18" id="xkK-7s-5KI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="mealNameLabel" destination="9DV-Cj-tMs" id="T9v-s5-vgG"/>
+                                    <outlet property="mealRating" destination="FY8-AG-gaT" id="P3P-vL-jL7"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="yhV-0c-C2r"/>
                                 </connections>
                             </tableViewCell>
