@@ -8,7 +8,7 @@ let name1 = "Arvinth"
 
 var name2: String?
 
-let name3 = name2 ?? name1
+let name3 = name2 ?? "name1"
 
 print(name3)
 
