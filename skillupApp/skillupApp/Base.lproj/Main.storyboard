@@ -52,11 +52,58 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rnW-x4-JLr"/>
+                    <navigationItem key="navigationItem" id="rnW-x4-JLr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HhN-Ji-6ib">
+                            <connections>
+                                <segue destination="TvR-69-93o" kind="show" id="GU5-Wi-aGV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="62.518740629685162"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="6yK-Bp-ZrK">
+            <objects>
+                <viewController id="TvR-69-93o" customClass="secondViewController" customModule="skillupApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHx-2g-9tt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GJ-NR-k12">
+                                <rect key="frame" x="71" y="124" width="253" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwq-Tg-kbo">
+                                <rect key="frame" x="150" y="213" width="72" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="btnClick:" destination="TvR-69-93o" eventType="touchUpInside" id="BZj-ca-01d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CV1-ZS-gy9" firstAttribute="trailing" secondItem="0GJ-NR-k12" secondAttribute="trailing" constant="51" id="4rZ-Lo-SrS"/>
+                            <constraint firstItem="kwq-Tg-kbo" firstAttribute="top" secondItem="0GJ-NR-k12" secondAttribute="bottom" constant="55" id="5IY-bO-pCC"/>
+                            <constraint firstItem="kwq-Tg-kbo" firstAttribute="leading" secondItem="CV1-ZS-gy9" secondAttribute="leading" constant="150" id="gBq-9C-IXh"/>
+                            <constraint firstItem="CV1-ZS-gy9" firstAttribute="trailing" secondItem="kwq-Tg-kbo" secondAttribute="trailing" constant="153" id="gn1-tx-mML"/>
+                            <constraint firstItem="0GJ-NR-k12" firstAttribute="top" secondItem="CV1-ZS-gy9" secondAttribute="top" constant="80" id="kpO-Od-eRk"/>
+                            <constraint firstItem="0GJ-NR-k12" firstAttribute="leading" secondItem="CV1-ZS-gy9" secondAttribute="leading" constant="71" id="sHt-O7-8Cb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CV1-ZS-gy9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LRb-Br-XST"/>
+                    <connections>
+                        <outlet property="txtFld" destination="0GJ-NR-k12" id="Oan-KW-QP7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PdB-0m-KPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864.8" y="62.518740629685162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1fv-wx-cdg">

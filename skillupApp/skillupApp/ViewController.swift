@@ -23,13 +23,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: Tableview func
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getData().count
+        return viewModel.getOSList().count
         }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // TODO:
         let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCell")
-        cell?.textLabel?.text = viewModel.getData()[indexPath.row].name
+        cell?.textLabel?.text = viewModel.getOSList()[indexPath.row].name
             
         return cell!
     }
