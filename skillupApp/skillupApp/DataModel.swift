@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct DataModel {
+struct DataModel: Codable {
    
     let section: Int
     let id: Int

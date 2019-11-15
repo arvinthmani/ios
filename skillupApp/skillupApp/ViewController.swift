@@ -8,23 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+        
+    let viewModel = ViewModel()
+
     override func loadView() {
         super.loadView()
-        print("loadview")
-        tableView = ViewModel().getTableView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view did load")
     }
     
-    
     // MARK: Tableview func
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getData().count
+        }
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO:
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCell")
+        cell?.textLabel?.text = viewModel.getData()[indexPath.row].name
+            
+        return cell!
+    }
+
     
 }
 

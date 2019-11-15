@@ -8,36 +8,28 @@
 
 import UIKit
 
-class ViewModel: NSObject, UITableViewDelegate, UITableViewDataSource {
-
-    var oSArray: [DataModel] = []
-    let tableView = UITableView()
+class ViewModel: NSObject  {
+    
+    let defaults = UserDefaults.standard
+    var osArray: [DataModel]?
 
     override init() {
         super.init()
-
-        oSArray =  [(DataModel(section: 1, id: 1, name: "iOS")),
-        (DataModel(section: 1, id: 2, name: "Watch OS")),
-        (DataModel(section: 1, id: 3, name: "Mac OS"))]
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        osArray = [(DataModel(section: 1, id: 1, name: "iOS")),
+                   (DataModel(section: 1, id: 2, name: "Watch OS")),
+                   (DataModel(section: 1, id: 3, name: "Mac OS"))]
 
+        defaults.set(try? PropertyListEncoder().encode(osArray), forKey:"OS")
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return oSArray.count
-        }
-        
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO:
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCell")
-        cell?.textLabel?.text = oSArray[indexPath.row].name
+    func getData() -> [DataModel] {
+        if let data = defaults.value(forKey:"OS") as? Data {
+            guard let OS = try? PropertyListDecoder().decode(Array<DataModel>.self, from: data) as [DataModel] else { return [] }
             
-        return cell!
+             return OS
+        }
+       return []
     }
     
-    func getTableView() -> UITableView {
-        return tableView
-    }
 }
